@@ -1,0 +1,29 @@
+*{
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    flex-direction: column;
+    color: white;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 300px;
+    width: 300px;
+    border: 2px solid white;
+}
+
+.grid-elements {
+    border: 2px solid white;
+    
+}
