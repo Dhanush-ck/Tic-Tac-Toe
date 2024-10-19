@@ -10,6 +10,7 @@ gridElements.forEach(gridElement=>{
         if(child.length == 0){
             gridElement.innerHTML = `<img src="${imgSrc}" alt=${imgAlt}>`;
             setImgSrc();
+            checkWin();
         }
     }
 })
@@ -23,15 +24,26 @@ function setImgSrc() {
         imgSrc = crossIcon;
         imgAlt = "Cross";
     }
-    const C1 = gridElements[0].children[0];
-    // console.log(C1.alt);
-    const C2 = gridElements[1].children[0];
-    // console.log(C2.alt);
-    const C3 = gridElements[2].children[0];
-    // console.log(C3.alt);
+}
+
+function checkWin(){
+    var C1 = gridElements[0].children[0];
+    var C2 = gridElements[1].children[0];
+    var C3 = gridElements[2].children[0];
     if((C1.alt == C2.alt)&&(C1.alt == C3.alt)){
-        C1.parentElement.style.backgroundColor = "lightblue";
-        C2.parentElement.style.backgroundColor = "lightblue";
-        C3.parentElement.style.backgroundColor = "lightblue";
+        setColor(C1, C2, C3, "lightblue");
     }
+    else{
+        C2 = gridElements[3].children[0];
+        C3 = gridElements[6].children[0];
+        if((C1.alt == C2.alt)&&(C1.alt == C3.alt)){
+            setColor(C1, C2, C3, "lightblue");
+        }
+    }
+}
+
+function setColor(C1, C2, C3, color){
+    C1.parentElement.style.backgroundColor = color;
+    C2.parentElement.style.backgroundColor = color;
+    C3.parentElement.style.backgroundColor = color;
 }
