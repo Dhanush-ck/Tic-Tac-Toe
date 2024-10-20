@@ -1,7 +1,7 @@
 const crossIcon = "./img/cross.png"; 
 const circleIcon = "./img/circle.png";
 var imgSrc = crossIcon;
-var imgAlt = "Cross"
+var imgAlt = "Cross";
 const gridElements = document.querySelectorAll('.grid-elements');
 
 gridElements.forEach(gridElement=>{
@@ -27,19 +27,26 @@ function setImgSrc() {
 }
 
 function checkWin(){
-    var C1 = gridElements[0].children[0];
-    var C2 = gridElements[1].children[0];
-    var C3 = gridElements[2].children[0];
-    if((C1.alt == C2.alt)&&(C1.alt == C3.alt)){
-        setColor(C1, C2, C3, "lightblue");
-    }
-    else{
-        C2 = gridElements[3].children[0];
-        C3 = gridElements[6].children[0];
-        if((C1.alt == C2.alt)&&(C1.alt == C3.alt)){
+
+    var winCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    winCombinations.forEach(combination => {
+        var C1 = gridElements[combination[0]].children[0];
+        var C2 = gridElements[combination[1]].children[0];
+        var C3 = gridElements[combination[2]].children[0];
+        if((C1.alt === C2.alt) && (C1.alt === C3.alt)){
             setColor(C1, C2, C3, "lightblue");
         }
-    }
+    });
 }
 
 function setColor(C1, C2, C3, color){
