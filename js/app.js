@@ -43,8 +43,16 @@ function checkWin(){
         var C1 = gridElements[combination[0]].children[0];
         var C2 = gridElements[combination[1]].children[0];
         var C3 = gridElements[combination[2]].children[0];
-        if((C1.alt === C2.alt) && (C1.alt === C3.alt)){
-            setColor(C1, C2, C3, "lightblue");
+        if(C1 && C2 && C3 && (C1.alt === C2.alt) && (C1.alt === C3.alt)){
+            let color;
+            if(C1.alt == "Cross"){
+                color = "lightblue";
+            }
+            else{
+                color = "#ff5f5f";
+            }
+            setColor(C1, C2, C3, color);
+            return;
         }
     });
 }
