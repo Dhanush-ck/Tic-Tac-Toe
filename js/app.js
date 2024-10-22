@@ -3,6 +3,7 @@ const circleIcon = "./img/circle.png";
 var imgSrc = crossIcon;
 var imgAlt = "Cross";
 const gridElements = document.querySelectorAll('.grid-elements');
+const result = document.querySelector('.result');
 
 gridElements.forEach(gridElement=>{
     gridElement.onclick = ()=>{
@@ -47,9 +48,11 @@ function checkWin(){
             let color;
             if(C1.alt == "Cross"){
                 color = "lightblue";
+                result.innerHTML = `<img src="${crossIcon}"> Won`;
             }
             else{
                 color = "#ff5f5f";
+                result.innerHTML = `<img src="${circleIcon}"> Won`;
             }
             setColor(C1, C2, C3, color);
             return;
