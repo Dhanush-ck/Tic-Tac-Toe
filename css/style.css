@@ -35,3 +35,15 @@
     width: 95%;
     height: 95%;
 }
+
+.result {
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.result img {
+    height: 40px;
+}
