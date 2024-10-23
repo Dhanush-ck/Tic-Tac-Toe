@@ -47,3 +47,7 @@
 .result img {
     height: 40px;
 }
+
+#reset {
+    cursor: pointer;
+}
