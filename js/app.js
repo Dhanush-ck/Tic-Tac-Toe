@@ -62,6 +62,16 @@ function checkWin(){
             return;
         }
     });
+    let flagM = 1;
+    gridElements.forEach(gridElement=>{
+        if(gridElement.children.length != 1){
+            flagM = 0;
+        }
+    })
+    if((flagM == 1)&&(flag != 0)){
+        result.innerHTML = `It's Tie`;
+        flag = 0;    
+    }
     setButton();
 }
 
@@ -76,6 +86,7 @@ reset.onclick = ()=>{
         gridElements.forEach(gridElement =>{
             gridElement.innerHTML = "";
             gridElement.style.backgroundColor = "transparent";
+            result.innerHTML = "";
         })
         flag = 1;
     }
