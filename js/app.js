@@ -82,14 +82,12 @@ function setColor(C1, C2, C3, color){
 }
 
 reset.onclick = ()=>{
-    if(flag == 0){
         gridElements.forEach(gridElement =>{
             gridElement.innerHTML = "";
             gridElement.style.backgroundColor = "transparent";
             result.innerHTML = "";
         })
         flag = 1;
-    }
     setButton();
 }
 
